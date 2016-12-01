@@ -269,6 +269,12 @@ function Comment(options)
 
     _this._addEvent();
 }
+Comment.prototype.commentHide = function(){
+    $('.foot_comment').css({"display":"none"});
+}
+Comment.prototype.commentShow = function(){
+    $('.foot_comment').css({"display":"block"});
+}
 
 var oMeta=document.getElementsByName('viewport')[0];
 Comment.prototype._addcss=function (){
@@ -603,7 +609,6 @@ Comment.prototype.commentList = function() {
 
         $('.foot_comment').hide();
 
-        // console.log("page");
 
         $('.kcmnt_list').css({"min-height":"800px"});
 
@@ -622,28 +627,28 @@ Comment.prototype.commentList = function() {
 
             url: "http://cmnt.sina.cn/aj/v2/index",
 
-            // data: {
-
-            //     product: "comos", 
-
-            //     group: 0,
-
-            //     index: "fxwztrt0012691",
-
-            //     page: 2
-
-            // },
             data: {
 
-                product: CMNT.product, 
+                product: "comos", 
 
-                group: CMNT.index,
+                group: 0,
 
-                index: (CMNT.index || __docConfig.__docId),
+                index: "fxwztrt0012691",
 
-                page: _this.page
+                page: 2
 
             },
+            // data: {
+
+            //     product: CMNT.product, 
+
+            //     group: CMNT.index,
+
+            //     index: (CMNT.index || __docConfig.__docId),
+
+            //     page: _this.page
+
+            // },
 
             dataType: "jsonp",
 
@@ -976,6 +981,20 @@ Comment.prototype.shield_cancel = function(e){
         e.cancelBubble = true; 
     }
 }
+Comment.prototype._articleComment = function(e){
+
+    _this.login(_articleComment);
+    function _articleComment(){
+        $('.kcmnt_fixed_reply_input').attr('placeholder', "说说你的看法");
+
+        $('.kcmnt_review').show();
+
+        $('.kcmnt_fixed_reply_input').focus();
+
+    }
+
+}
+
 
 Comment.prototype._cmtListClose = function(){
 
