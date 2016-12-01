@@ -1,17 +1,17 @@
 #评论插件配置参数说明
   所需参数，放在页面中
-    var __docConfig= {
-      __domain:, //文档所在域
-      __docid:,
-      __docUrl:, //分享的url
-      __mainPic:, //分享的图片地址
-      __title:, //文章标题
-      __content:, //文章内容
-      __tj_ch:, //统计参数
-      __webURL:, //文章url
-      __isdoc:, //1表示分享到微博需要doc样式，0表示不需要doc样式
-      __cmntTotal: //评论总条数
-    };
+            var __docConfig= {
+              __domain:, //文档所在域
+              __docid:,
+              __docUrl:, //分享的url
+              __mainPic:, //分享的图片地址
+              __title:, //文章标题
+              __content:, //文章内容
+              __tj_ch:, //统计参数
+              __webURL:, //文章url
+              __isdoc:, //1表示分享到微博需要doc样式，0表示不需要doc样式
+              __cmntTotal: //评论总条数
+            };
 
 #使用的步骤如下：
 1.在所需该评论组件的的页面引入：
